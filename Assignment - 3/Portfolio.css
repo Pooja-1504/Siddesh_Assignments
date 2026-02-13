@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 40px;
+}
+
+section {
+    padding: 50px;
+    text-align: center;
+}
+
+.about {
+    background: #f4f4f4;
+}
+
+.skills-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.skill-card {
+    background: #007bff;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+}
+
+.contact {
+    background: #222;
+    color: white;
+}
