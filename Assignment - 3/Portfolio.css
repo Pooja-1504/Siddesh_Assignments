@@ -1,40 +1,94 @@
-body {
+* {
     margin: 0;
-    font-family: Arial, sans-serif;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
 }
 
 .header {
-    background: #222;
+    background: linear-gradient(to right, #4b6cb7, #182848);
     color: white;
     text-align: center;
-    padding: 40px;
+    padding: 40px 20px;
+}
+
+.header h1 {
+    font-size: 40px;
+}
+
+.header p {
+    margin-top: 10px;
+    font-size: 18px;
+    opacity: 0.9;
 }
 
 section {
-    padding: 50px;
-    text-align: center;
+    background: white;
+    margin: 25px auto;
+    padding: 25px;
+    width: 85%;
+    max-width: 900px;
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
 }
 
-.about {
-    background: #f4f4f4;
+section h2 {
+    color: #4b6cb7;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 8px;
 }
 
 .skills-container {
     display: flex;
-    justify-content: center;
-    gap: 20px;
     flex-wrap: wrap;
-    margin-top: 20px;
+    gap: 12px;
 }
 
 .skill-card {
-    background: #007bff;
+    background: #4b6cb7;
     color: white;
-    padding: 15px 25px;
+    padding: 10px 15px;
     border-radius: 8px;
+    font-size: 14px;
+    transition: 0.3s;
 }
 
-.contact {
-    background: #222;
-    color: white;
+.skill-card:hover {
+    background: #182848;
+    transform: scale(1.05);
+}
+
+.contact p {
+    margin: 8px 0;
+    font-weight: 500;
+}
+
+@media (max-width: 600px) {
+    .header h1 {
+        font-size: 28px;
+    }
+
+    section {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .skills-container {
+        justify-content: center;
+    }
 }
