@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Form Validation</title>
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(120deg,#74ebd5,#9face6);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.container{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    width:350px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+h2{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+input{
+    width:100%;
+    padding:10px;
+    margin-top:10px;
+    border-radius:8px;
+    border:1px solid #ccc;
+}
+
+.error{
+    color:red;
+    font-size:13px;
+    text-align:left;
+}
+
+button{
+    width:48%;
+    padding:10px;
+    margin-top:15px;
+    border:none;
+    border-radius:8px;
+    color:white;
+    cursor:pointer;
+}
+
+.submitBtn{ background:#6c63ff; }
+.resetBtn{ background:#ff4d4d; }
+
+.btns{
+    display:flex;
+    justify-content:space-between;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h2>Registration Form</h2>
+
+<form onsubmit="return validateForm()">
+
+<input type="text" id="name" placeholder="Enter your full name">
+<div class="error" id="nameError"></div>
+
+<input type="text" id="email" placeholder="Enter your email">
+<div class="error" id="emailError"></div>
+
+<input type="text" id="phone" placeholder="Enter 10-digit phone number">
+<div class="error" id="phoneError"></div>
+
+<input type="password" id="password" placeholder="Create password (min 6 characters)">
+<div class="error" id="passError"></div>
+
+<div class="btns">
+<button class="submitBtn" type="submit">Submit</button>
+<button class="resetBtn" type="reset">Reset</button>
+</div>
+
+</form>
+</div>
+
+<script>
+function validateForm(){
+
+let name=document.getElementById("name").value.trim();
+let email=document.getElementById("email").value.trim();
+let phone=document.getElementById("phone").value.trim();
+let pass=document.getElementById("password").value.trim();
+
+document.getElementById("nameError").innerText="";
+document.getElementById("emailError").innerText="";
+document.getElementById("phoneError").innerText="";
+document.getElementById("passError").innerText="";
+
+let valid=true;
+
+let emailPattern=/^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+let phonePattern=/^[0-9]{10}$/;
+
+if(name==""){
+    document.getElementById("nameError").innerText="Name is required";
+    valid=false;
+}
+
+if(!email.match(emailPattern)){
+    document.getElementById("emailError").innerText="Enter valid email";
+    valid=false;
+}
+
+if(!phone.match(phonePattern)){
+    document.getElementById("phoneError").innerText="Enter 10 digit phone number";
+    valid=false;
+}
+
+if(pass.length<6){
+    document.getElementById("passError").innerText="Password must be at least 6 characters";
+    valid=false;
+}
+
+if(valid){
+    alert("Form Submitted Successfully");
+}
+
+return valid;
+}
+</script>
+
+</body>
+</html>

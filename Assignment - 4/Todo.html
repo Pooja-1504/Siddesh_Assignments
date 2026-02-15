@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>To Do List</title>
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(120deg, #74ebd5, #9face6);
+    text-align:center;
+    margin-top:40px;
+}
+
+.container{
+    background:white;
+    width:360px;
+    margin:auto;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+h2{
+    color:#333;
+    margin-bottom:20px;
+}
+
+input{
+    padding:10px;
+    width:65%;
+    border-radius:8px;
+    border:1px solid #ccc;
+    outline:none;
+}
+
+.addBtn{
+    padding:10px 15px;
+    background:#6c63ff;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+ul{
+    list-style:none;
+    padding:0;
+    margin-top:20px;
+}
+
+li{
+    background:#f4f4f4;
+    margin:10px 0;
+    padding:10px;
+    border-radius:8px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.btn{
+    margin-left:5px;
+    border:none;
+    padding:5px 10px;
+    border-radius:6px;
+    cursor:pointer;
+    color:white;
+}
+
+.editBtn{ background:#ffa500; }
+.deleteBtn{ background:#ff4d4d; }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h2>My To-Do List</h2>
+
+<input type="text" id="task" placeholder="Enter task">
+<button class="addBtn" onclick="addTask()">Add</button>
+
+<ul id="list"></ul>
+</div>
+
+<script>
+function addTask(){
+    let task = document.getElementById("task").value;
+    if(task==""){ alert("Enter a task"); return; }
+
+    let li = document.createElement("li");
+    li.innerHTML = `
+        <span>${task}</span>
+        <div>
+            <button class="btn editBtn" onclick="editTask(this)">Edit</button>
+            <button class="btn deleteBtn" onclick="this.parentElement.parentElement.remove()">Delete</button>
+        </div>
+    `;
+
+    document.getElementById("list").appendChild(li);
+    document.getElementById("task").value="";
+}
+
+function editTask(btn){
+    let li = btn.parentElement.parentElement;
+    let span = li.querySelector("span");
+    let newTask = prompt("Edit task:", span.innerText);
+    if(newTask!="") span.innerText = newTask;
+}
+</script>
+
+</body>
+</html>
