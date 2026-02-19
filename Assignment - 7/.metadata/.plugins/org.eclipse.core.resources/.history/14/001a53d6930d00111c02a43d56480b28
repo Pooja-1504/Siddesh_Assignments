@@ -1,0 +1,19 @@
+<servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>leaveform.LoginServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/LoginServlet</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>LeaveServlet</servlet-name>
+    <servlet-class>leaveform.LeaveServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>LeaveServlet</servlet-name>
+    <url-pattern>/LeaveServlet</url-pattern>
+</servlet-mapping>

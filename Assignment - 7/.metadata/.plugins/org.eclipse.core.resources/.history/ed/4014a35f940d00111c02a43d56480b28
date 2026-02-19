@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Leave Application</h2>
+<form action="LeaveServlet" method="post">
+Name: <input type="text" name="name"><br><br>
+Reason: <input type="text" name="reason"><br><br>
+From Date: <input type="date" name="from"><br><br>
+To Date: <input type="date" name="to"><br><br>
+<input type="submit" value="Apply Leave">
+</form>
+</body>
+</html>

@@ -1,0 +1,7 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Leave Applied Successfully!</h2>
+<a href="login.jsp">Back to Login</a>
+</body>
+</html>
