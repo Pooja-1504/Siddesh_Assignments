@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Button Counter</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(120deg,#74ebd5,#9face6);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.container{
+    background:white;
+    padding:40px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+    text-align:center;
+    width:320px;
+}
+
+h2{
+    margin-bottom:20px;
+}
+
+#count{
+    font-size:50px;
+    color:#680404;
+    margin:20px 0;
+}
+
+button{
+    padding:12px 20px;
+    font-size:16px;
+    border:none;
+    border-radius:8px;
+    color:white;
+    cursor:pointer;
+    margin:8px;
+    width:120px;
+}
+
+.inc{ background:#4CAF50; }
+.dec{ background:#ff4d4d; }
+.reset{ background:#5555ff; }
+
+button:hover{
+    opacity:0.85;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h2>Button Click Counter</h2>
+<h1 id="count">0</h1>
+
+<button class="inc" onclick="increase()">Increment</button>
+<button class="dec" onclick="decrease()">Decrement</button>
+<button class="reset" onclick="resetCount()">Reset</button>
+</div>
+
+<script>
+let count = 0;
+
+function increase(){
+    count++;
+    document.getElementById("count").innerText = count;
+}
+
+function decrease(){
+    count--;
+    document.getElementById("count").innerText = count;
+}
+
+function resetCount(){
+    count = 0;
+    document.getElementById("count").innerText = count;
+}
+</script>
+
+</body>
+</html>
