@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>E-commerce Dashboard</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1{
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        .container{
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .card{
+            background: #ffffff;
+            padding: 20px;
+            width: 250px;
+            border-radius: 10px;
+            border-top: 6px solid #4CAF50;   /* small color line */
+        }
+
+        .card:nth-child(2){
+            border-top-color: #2196F3;
+        }
+
+        .card:nth-child(3){
+            border-top-color: #FF9800;
+        }
+
+        .card h2{
+            margin-top: 0;
+            color: #333;
+        }
+
+        ul{
+            padding-left: 18px;
+        }
+
+        li{
+            margin-bottom: 5px;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>E-commerce Analytics Dashboard</h1>
+
+<div class="container">
+
+    <div class="card">
+        <h2>Total Sales</h2>
+        <p>₹ {{ sales }}</p>
+    </div>
+
+    <div class="card">
+        <h2>Total Orders</h2>
+        <p>{{ orders }}</p>
+    </div>
+
+    <div class="card">
+        <h2>Top Products</h2>
+        <ul>
+            {% for p,q in products.items() %}
+                <li>{{ p }} → {{ q }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+</div>
+
+</body>
+</html>
